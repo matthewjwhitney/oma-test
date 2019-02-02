@@ -1,40 +1,36 @@
 import React, { Component } from "react";
 import "./hero.scss";
+import * as logo from "../assets/logo.png";
 
 class Hero extends Component {
   render() {
     return (
-      <section class="hero is-primary is-medium">
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a class="navbar-item">
-                  <img
-                    src="https://bulma.io/images/bulma-type-white.png"
-                    alt="Logo"
-                  />
+      <section className="hero is-fullheight has-bg-img">
+        <div className="hero-head">
+          <nav className="navbar">
+            <div className="container">
+              <div className="navbar-brand">
+                <a className="navbar-item">
+                  <img src={logo} alt="Logo" className="has-margin-left" />
                 </a>
-                <span
-                  class="navbar-burger burger"
+                {/* <span
+                  className="navbar-burger burger"
                   data-target="navbarMenuHeroA"
                 >
                   <span />
                   <span />
                   <span />
-                </span>
+                </span> */}
               </div>
-              <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                  <a class="navbar-item is-active">Home</a>
-                  <a class="navbar-item">Examples</a>
-                  <a class="navbar-item">Documentation</a>
-                  <span class="navbar-item">
-                    <a class="button is-primary is-inverted">
-                      <span class="icon">
-                        <i class="fab fa-github" />
-                      </span>
-                      <span>Download</span>
+              <div id="navbarMenuHeroA" className="navbar-menu">
+                <div className="navbar">
+                  <a className="navbar-item is-active">Conserve & Protect</a>
+                  <a className="navbar-item">Stories</a>
+                  <a className="navbar-item">Our Experts</a>
+                  <a className="navbar-item">Programs</a>
+                  <span className="navbar-item">
+                    <a className="button is-inverted">
+                      <span>Donate</span>
                     </a>
                   </span>
                 </div>
@@ -43,38 +39,30 @@ class Hero extends Component {
           </nav>
         </div>
 
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">Title</h1>
-            <h2 class="subtitle">Subtitle</h2>
+        <div className="hero-body">
+          <div className="container">
+            <div className="card has-max-width is-pulled-right is-nudged-down">
+              <div className="card-content">
+                <div className="content has-text-centered">
+                  <hr />
+                  <p className="title">Conserve & Protect</p>
+                  <hr />
+                  <p>
+                    Arizona Game and Fish Department manages over 800 species of
+                    wildlife, preserving these incredible animals for future
+                    generations.
+                  </p>
+                  <a href="#" className="button">
+                    Our Mission
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-foot">
-          <nav class="tabs">
-            <div class="container">
-              <ul>
-                <li class="is-active">
-                  <a>Overview</a>
-                </li>
-                <li>
-                  <a>Modifiers</a>
-                </li>
-                <li>
-                  <a>Grid</a>
-                </li>
-                <li>
-                  <a>Elements</a>
-                </li>
-                <li>
-                  <a>Components</a>
-                </li>
-                <li>
-                  <a>Layout</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+        <div className="hero-foot">
+          <div className="container">{/* Hero Body */}</div>
         </div>
       </section>
     );
