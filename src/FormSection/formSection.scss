@@ -1,0 +1,20 @@
+#form-section {
+  &.has-bg-img {
+    background: url("../assets/bird-bg.png") center center;
+    background-size: cover;
+  }
+  .card {
+    &.has-max-width {
+      max-width: 400px;
+    }
+  }
+
+  .card-image {
+    &.has-margin-top {
+      margin-top: 4rem;
+    }
+    .has-max-height {
+      max-height: 120px;
+    }
+  }
+}

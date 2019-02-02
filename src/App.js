@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "./App.scss";
-import Hero from "./Hero";
+import HeaderSection from "./HeaderSection";
+import CardSection from "./CardSection";
+import FormSection from "./FormSection";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Hero />
+        <HeaderSection />
+        <CardSection />
+        <FormSection />
+        <Footer />
       </div>
     );
   }

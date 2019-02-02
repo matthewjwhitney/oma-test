@@ -1,0 +1,18 @@
+#header-section {
+  &.has-bg-img {
+    background: url("../assets/ferret-bg.png") center center;
+    background-size: cover;
+  }
+
+  .card {
+    &.has-max-width {
+      max-width: 420px;
+    }
+  }
+
+  .logo {
+    &.has-margin-left {
+      margin-left: 100px;
+    }
+  }
+}

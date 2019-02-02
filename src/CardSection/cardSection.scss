@@ -1,0 +1,25 @@
+#card-section {
+  &.has-bg-img {
+    background: url("../assets/squirrel-bg.png") center center;
+    background-size: cover;
+  }
+  .title {
+    &.has-margin-top {
+      margin-top: 4rem;
+    }
+  }
+  .card {
+    &.has-max-width {
+      max-width: 400px;
+    }
+  }
+
+  .card-image {
+    &.has-margin-top {
+      margin-top: 4rem;
+    }
+    .has-max-height {
+      max-height: 120px;
+    }
+  }
+}

@@ -1,26 +1,18 @@
 import React, { Component } from "react";
-import "./hero.scss";
+import "./headerSection.scss";
 import * as logo from "../assets/logo.png";
 
-class Hero extends Component {
+class HeaderSection extends Component {
   render() {
     return (
-      <section className="hero is-fullheight has-bg-img">
+      <section id="header-section" className="hero is-fullheight has-bg-img">
         <div className="hero-head">
           <nav className="navbar">
             <div className="container">
               <div className="navbar-brand">
                 <a className="navbar-item">
-                  <img src={logo} alt="Logo" className="has-margin-left" />
+                  <img src={logo} alt="Logo" className="logo has-margin-left" />
                 </a>
-                {/* <span
-                  className="navbar-burger burger"
-                  data-target="navbarMenuHeroA"
-                >
-                  <span />
-                  <span />
-                  <span />
-                </span> */}
               </div>
               <div id="navbarMenuHeroA" className="navbar-menu">
                 <div className="navbar">
@@ -41,18 +33,18 @@ class Hero extends Component {
 
         <div className="hero-body">
           <div className="container">
-            <div className="card has-max-width is-pulled-right is-nudged-down">
+            <div className="card has-max-width is-pulled-right">
               <div className="card-content">
                 <div className="content has-text-centered">
                   <hr />
-                  <p className="title">Conserve & Protect</p>
+                  <p className="title is-uppercase">Conserve & Protect</p>
                   <hr />
                   <p>
                     Arizona Game and Fish Department manages over 800 species of
                     wildlife, preserving these incredible animals for future
                     generations.
                   </p>
-                  <a href="#" className="button">
+                  <a href="#" className="button is-uppercase is-large">
                     Our Mission
                   </a>
                 </div>
@@ -60,13 +52,9 @@ class Hero extends Component {
             </div>
           </div>
         </div>
-
-        <div className="hero-foot">
-          <div className="container">{/* Hero Body */}</div>
-        </div>
       </section>
     );
   }
 }
 
-export default Hero;
+export default HeaderSection;
