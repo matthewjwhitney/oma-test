@@ -8,7 +8,7 @@ class FormSection extends Component {
         <div className="hero-body">
           <div className="container">
             <div className="columns is-centered">
-              <div className="card has-max-width is-pulled-right column">
+              <div className="card has-max-width column">
                 <div className="card-content">
                   <div className="content">
                     <hr />
