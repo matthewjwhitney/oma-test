@@ -1,26 +1,21 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./formSection.scss";
 
 class FormSection extends Component {
   state = {
-    data: null
+    fullName: "",
+    email: "",
+    subscribe: false
   };
 
-  componentDidMount() {
-    // Call our fetch function below once the component mounts
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
-      .catch(err => console.log(err));
-  }
-  // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
-  callBackendAPI = async () => {
-    const response = await fetch("/express_test");
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message);
-    }
-    return body;
+  putDataToDB = () => {
+    console.log(this.state.fullName);
+    axios.post("http://localhost:3000/api/putData", {
+      fullName: this.state.fullName,
+      email: this.state.email,
+      subscribe: this.state.subscribe
+    });
   };
 
   render() {
@@ -37,13 +32,16 @@ class FormSection extends Component {
                       Stay in Touch
                     </p>
                     <hr />
-                    <p>{this.state.data}</p>
                     <div className="field is-grouped">
                       <div className="control is-expanded">
                         <input
                           className="input"
                           type="name"
                           placeholder="Enter Full Name"
+                          onChange={e =>
+                            this.setState({ fullName: e.target.value })
+                          }
+                          required
                         />
                       </div>
                     </div>
@@ -53,19 +51,31 @@ class FormSection extends Component {
                           className="input"
                           type="email"
                           placeholder="Enter Email"
+                          onChange={e =>
+                            this.setState({ email: e.target.value })
+                          }
                           required
                         />
                       </div>
                     </div>
                     <div className="field is-grouped">
                       <label className="checkbox">
-                        <input required type="checkbox" /> Yes, I want to sign
-                        up to receive e-newsletters from the Arizona Game and
-                        Fish Department.
+                        <input
+                          required
+                          type="checkbox"
+                          onChange={e =>
+                            this.setState({ subscribe: e.target.value })
+                          }
+                        />{" "}
+                        Yes, I want to sign up to receive e-newsletters from the
+                        Arizona Game and Fish Department.
                       </label>
                     </div>
                     <div className="control">
-                      <button className="button is-centered is-large is-fullwidth is-uppercase">
+                      <button
+                        onClick={() => this.putDataToDB()}
+                        className="button is-centered is-large is-fullwidth is-uppercase"
+                      >
                         Sign Up
                       </button>
                     </div>
