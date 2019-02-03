@@ -23,17 +23,19 @@ I’m looking forward to reviewing your submission!
 
 - scaffolded react front-end with create-react-app
 - leveraged node-sass and bulma for quick wireframing with out-of-the-box css components/utilities and long-term scalability using sass variables
-
-## Notes
-
-- scraped assets and copy from .psd file using GIMP because they were not provided
+- express server
+- mLab cloud mongoDB database
+- axios http requests
+- form validation and submit handled with React State
 
 ## Todos
 
 #### If I had time these would be my next improvements
 
-- reusable components for sections and cards
-- sass variables for brand colors
 - more css adjustments to better match mockup
+- server credentials hidden in .env file
+- reusable components for sections and cards with content provided by API
+- sass variables for brand colors and styles
+- more complex form validation rules and better thank you message on submit
 - card carousel in CardSection
 - parallax background images
