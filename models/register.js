@@ -9,8 +9,8 @@ const RegisterSchema = new mongoose.Schema({
     default: ""
   },
   subscribe: {
-    type: Boolean,
-    default: false
+    type: String,
+    default: ""
   }
 });
 

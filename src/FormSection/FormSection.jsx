@@ -48,7 +48,7 @@ class FormSection extends Component {
 
   putDataToDB = () => {
     axios
-      .post("http://localhost:3000/api/putData", {
+      .post(`/api/putData`, {
         fullName: this.state.fullName,
         email: this.state.email,
         subscribe: this.state.subscribe

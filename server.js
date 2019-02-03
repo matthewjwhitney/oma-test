@@ -11,11 +11,16 @@ const router = express.Router();
 const dbRoute =
   "mongodb://oma-test:75ZTdHcBJpPFHzt@ds119765.mlab.com:19765/oma-test";
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const path = require("path");
 
-app.get("/express_test", (req, res) => {
-  res.send({ express: "EXPRESS BACKEND IS CONNECTED TO REACT" });
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 mongoose.connect(dbRoute, { useNewUrlParser: true });
 
@@ -42,5 +47,4 @@ router.post("/putData", (req, res) => {
   });
 });
 
-// append /api for the http requests
 app.use("/api", router);
